@@ -18,6 +18,6 @@ ReactDOM.render(
 
 // fetchPopularFilms();
 // fetchSearchFilm('batman');
-getFilmDetails('268');
+// getFilmDetails('268');
 getFilmCredits('268');
 getFilmReviews('268');

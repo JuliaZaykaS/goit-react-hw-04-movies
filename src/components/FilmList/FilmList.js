@@ -3,7 +3,8 @@ import { Link, useRouteMatch } from 'react-router-dom';
 
 export default function FilmList({ films }) {
     const { url } = useRouteMatch();
-    // console.log(url);
+    const params = useRouteMatch();
+    console.log(params);
   return (
     <>
       {/* <h2>Trending Today</h2> */}
@@ -11,7 +12,7 @@ export default function FilmList({ films }) {
         {films &&
           films.map(film => (
             <li key={film.id}>
-              <Link to={`${url}/${film.id}`}>
+              <Link to={url === '/' ? `${url}movies/${film.id}` : `${url}/${film.id}`}>
                 {film.title || film.original_name || film.original_title}
               </Link>
             </li>
