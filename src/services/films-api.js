@@ -21,7 +21,7 @@ export async function fetchSearchFilm(query) {
 
   const data = response.data.results;
 
-  console.log(data);
+//   console.log(data);
   return data;
 }
 export async function getFilmDetails(movieId) {
@@ -31,7 +31,7 @@ export async function getFilmDetails(movieId) {
 
   const data = response.data;
 
-//   console.log(data);
+  console.log(data);
   return data;
 }
 export async function getFilmCredits(movieId) {

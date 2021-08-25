@@ -5,6 +5,7 @@ import Navigation from '../Navigation/Navigation';
 // import SearchForm from '../SearchForm/SearchForm';
 import HomePage from '../../views/HomePage';
 import MoviesPage from '../../views/MoviesPage';
+import MovieDetailsPage from '../../views/MovieDetailsPage';
 
 function App() {
   return (
@@ -17,10 +18,13 @@ function App() {
             <HomePage/>
           {/* <FilmList /> */}
           </Route>
-          <Route path="/movies">
+          <Route path="/movies" exact>
             {/* <SearchForm /> */}
             <MoviesPage/>
 
+          </Route>
+          <Route path="/movies/:movieId">
+            <MovieDetailsPage/>
           </Route>
         </Switch>
       </Container>
