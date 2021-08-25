@@ -6,7 +6,7 @@ export default function FilmList({films}) {
             {/* <h2>Trending Today</h2> */}
             <ul>
                 {films && films.map(film =>
-                    <li>{ film.title}</li>
+                    <li key={film.id}>{ film.title || film.original_name || film.original_title}</li>
                 )}
 
             </ul>
