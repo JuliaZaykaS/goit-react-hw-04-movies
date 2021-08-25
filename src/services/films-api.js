@@ -31,7 +31,7 @@ export async function getFilmDetails(movieId) {
 
   const data = response.data;
 
-  console.log(data);
+  // console.log(data);
   return data;
 }
 export async function getFilmCredits(movieId) {
@@ -41,7 +41,7 @@ export async function getFilmCredits(movieId) {
 
   const data = response.data.cast;
 
-//   console.log(data);
+  console.log(data);
   return data;
 }
 export async function getFilmReviews(movieId) {

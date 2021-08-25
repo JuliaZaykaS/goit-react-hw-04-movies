@@ -3,8 +3,8 @@ import { Link, useRouteMatch } from 'react-router-dom';
 
 export default function FilmList({ films }) {
     const { url } = useRouteMatch();
-    const params = useRouteMatch();
-    console.log(params);
+    // const params = useRouteMatch();
+    // console.log(params);
   return (
     <>
       {/* <h2>Trending Today</h2> */}
