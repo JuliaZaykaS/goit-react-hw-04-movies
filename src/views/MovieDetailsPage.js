@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import { useParams, Route, useRouteMatch } from 'react-router-dom';
 import { getFilmDetails } from '../services/films-api';
 import FilmInfo from '../components/FilmInfo/FilmInfo';
-import CastPage from '../views/CastPage';
+import CastPage from './CastPage';
+import ReviewsPage from './ReviewsPage';
 
 
 export default function MovieDetailsPage() {
@@ -10,8 +11,8 @@ export default function MovieDetailsPage() {
     const { movieId } = useParams();
     const [film, setFilm] = useState(null);
     // console.log(path);
-    console.log(url);
-    console.log(movieId);
+    // console.log(url);
+    // console.log(movieId);
 
     useEffect(() => {
         getFilmDetails(movieId).then(setFilm)
@@ -26,7 +27,7 @@ export default function MovieDetailsPage() {
 
             </Route>
             <Route path={`${url}/reviews`}>
-                <CastPage id={movieId }/>
+                <ReviewsPage id={movieId }/>
 
             </Route>
             </>

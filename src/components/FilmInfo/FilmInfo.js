@@ -40,7 +40,7 @@ export default function FilmInfo({ film }) {
           </li>
           <li>
             <NavLink
-              to="/movies/:movieId/reviews"
+            to={`/movies/${film.id}/reviews`}
               className={s.link}
               activeClassName={s.linkActive}
             >
