@@ -8,10 +8,10 @@ export default function FilmList({ films }) {
   return (
     <>
       {/* <h2>Trending Today</h2> */}
-      <ul>
+      <ul className={s.FilmList}>
         {films &&
           films.map(film => (
-            <li key={film.id}>
+            <li key={film.id} className={s.filmListItem}>
               <Link to={url === '/' ? `${url}movies/${film.id}` : `${url}/${film.id}`}>
                 {film.title || film.original_name || film.original_title}
               </Link>

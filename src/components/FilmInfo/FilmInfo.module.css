@@ -1,0 +1,27 @@
+.mainFilmInfo {
+  display: flex;
+  border-bottom: 2px solid grey;
+  padding: 10px;
+}
+.mainFilmInfo img {
+  display: block;
+  height: auto;
+  width: 100%;
+  max-width: 200px;
+  margin-right: 10px;
+}
+
+h3,
+h4 {
+  color: indigo;
+}
+
+.additionalInfo {
+  border-bottom: 2px solid grey;
+}
+ul {
+  list-style: square;
+}
+ul > li {
+  padding: 5px;
+}

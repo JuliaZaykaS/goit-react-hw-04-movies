@@ -1,0 +1,17 @@
+.reviewsList {
+  list-style: square;
+}
+
+.reviewsList li {
+  border-bottom: 1px solid grey;
+  padding: 10px;
+}
+
+.author {
+  color: blueviolet;
+  font-weight: 600;
+}
+
+.authorTitle {
+  font-weight: bold;
+}

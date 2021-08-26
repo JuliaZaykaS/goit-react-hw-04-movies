@@ -1,0 +1,13 @@
+.button {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  background-color: ivory;
+  color: indigo;
+  font-weight: 600;
+  height: 40px;
+  width: 100px;
+  border-radius: 5px;
+  border: 5px solid indigo;
+  padding: 5px;
+  font-size: 20px;
+}

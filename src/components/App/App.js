@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import Container from '../Container/Container';
 import Navigation from '../Navigation/Navigation';
 import Spinner from '../Loader/Loader';
+// import s from './App.module.css';
 // import FilmList from '../FilmList/FilmList';
 // import SearchForm from '../SearchForm/SearchForm';
 // import HomePage from '../../views/HomePage';
@@ -14,6 +15,7 @@ const MovieDetailsPage = lazy(() => import('../../views/MovieDetailsPage' /*webp
 
 function App() {
   return (
+    // <div className={s.App}>
     <>
       <Container>
         <Navigation />
@@ -38,7 +40,8 @@ function App() {
         </Switch>
         </Suspense>
       </Container>
-    </>
+      {/* </div> */}
+      </>
   );
 }
 

@@ -17,10 +17,10 @@ const SearchForm = ({onSubmit}) => {
     }
 
   return (
-    <form onSubmit={onSubmitInput}>
+    <form onSubmit={onSubmitInput} className={s.form}>
     {/* <> */}
-      <input onChange={onInputChange}></input>
-      <button type="submit" >Search</button>
+      <input onChange={onInputChange} className={s.input}></input>
+      <button type="submit" className={s.button}>Search</button>
     {/* </> */}
     </form>
   );

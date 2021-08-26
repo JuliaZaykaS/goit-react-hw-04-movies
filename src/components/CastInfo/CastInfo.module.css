@@ -1,0 +1,24 @@
+.castList img {
+  display: block;
+  height: auto;
+  width: 100%;
+  max-width: 100px;
+}
+
+.castList {
+  list-style: square;
+}
+
+.castList li {
+  border-bottom: 1px solid grey;
+  padding: 10px;
+}
+.actor {
+  font-weight: bold;
+  color: blueviolet;
+}
+
+.character {
+  font-weight: 600;
+  color: blueviolet;
+}

@@ -7,11 +7,13 @@ export default function FilmInfo({ film }) {
   return (
     <div>
       {/* <Button/> */}
-      <div>
+      <div className={s.mainFilmInfo}>
         <img
           src={`https://image.tmdb.org/t/p/w500/${film.poster_path}`}
           alt={film.original_title}
         ></img>
+        <div>
+
         <h3>{film.original_title}</h3>
         {/* <p>User Score: <span>{film.popularity}%</span></p> */}
         <p>
@@ -21,10 +23,13 @@ export default function FilmInfo({ film }) {
         <p>{film.overview}</p>
         <h4>Genres</h4>
         <p>{film.genres.map(el => el.name).join(', ')}</p>
+        </div>
       </div>
       {/* <Route path="/movies/:movieId"> */}
       {/* path={`${path}/:authorId`}> */}
-          <p>Additional information</p>
+      <div className={s.additionalInfo}>
+
+          <h4>Additional information</h4>
       {/* <Route path={`${path}/:movieId`}> */}
         <ul>
           {/* <NavLink to={`${url}/${author.id}`}>{author.name}</NavLink> */}
@@ -50,6 +55,7 @@ export default function FilmInfo({ film }) {
 
           </li>
         </ul>
+      </div>
       {/* </Route> */}
     {/* //   <Route path={`${path}/:movieId/cast`}>
     //       {authors && <AuthorSubView authors={authors} />}

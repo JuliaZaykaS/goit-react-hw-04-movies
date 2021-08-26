@@ -11,7 +11,8 @@ import Spinner from '../components/Loader/Loader';
 
 export default function MoviesPage() {
     const [searchFilms, setSearchFilms] = useState('');
-    const [findFilms, setFindFilms] = useState([]);
+    // const [findFilms, setFindFilms] = useState([]);
+    const [findFilms, setFindFilms] = useState(null);
     // const { searchMovie } = useParams();
     const history = useHistory();
     const location = useLocation();

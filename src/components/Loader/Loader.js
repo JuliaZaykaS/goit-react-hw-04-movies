@@ -7,10 +7,11 @@ export default function Spinner() {
     <div className={s.Spinner}>
       <Loader
         type="Bars"
-        color="#00BFFF"
+        color="indigo"
         height={100}
         width={100}
         timeout={3000}
+
       />
     </div>
   );
