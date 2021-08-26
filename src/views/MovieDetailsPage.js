@@ -1,12 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import { useParams, Route, useRouteMatch, useHistory, useLocation } from 'react-router-dom';
 import { getFilmDetails } from '../services/films-api';
 import FilmInfo from '../components/FilmInfo/FilmInfo';
-import CastPage from './CastPage';
-import ReviewsPage from './ReviewsPage';
+// import CastPage from './CastPage';
+// import ReviewsPage from './ReviewsPage';
 import Button from '../components/Button/Button';
 import Spinner from '../components/Loader/Loader';
 
+const CastPage = lazy(() => import('./CastPage' /*webpackChunkName:"castPage"*/));
+const ReviewsPage = lazy(() => import('./ReviewsPage' /*webpackChunkName:"ReviewsPage"*/));
 
 export default function MovieDetailsPage() {
     const { url, path } = useRouteMatch();
@@ -44,7 +46,9 @@ export default function MovieDetailsPage() {
                 <Button onClickBtn={ onGoBackPage}/>
                 <FilmInfo film={film} />
                 </>
-                }
+            }
+            <Suspense fallback={<Spinner/>}>
+
             <Route path={`${url}/cast`}>
                 <CastPage id={movieId }/>
 
@@ -53,6 +57,7 @@ export default function MovieDetailsPage() {
                 <ReviewsPage id={movieId }/>
 
             </Route>
+            </Suspense>
             </>
 
     )
