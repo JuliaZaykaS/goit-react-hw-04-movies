@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 // import { useParams } from "react-router";
 import { getFilmCredits } from '../services/films-api';
 import CastInfo from "../components/CastInfo/CastInfo";
+import Spinner from '../components/Loader/Loader';
 
 
 export default function CastPage({id}) {
@@ -15,6 +16,10 @@ export default function CastPage({id}) {
     // }, [movieId])
     }, [id])
     return (
-        <CastInfo actors={ actors}/>
+        <>
+            {!actors
+                ? <Spinner/>
+                : <CastInfo actors={actors} />}
+            </>
     )
 }

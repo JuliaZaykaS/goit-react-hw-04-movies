@@ -6,6 +6,7 @@ import Section from "../components/Section/Section";
 // import Title from "../components/Title/Title";
 // import FilmInfo from '../components/FilmInfo/FilmInfo';
 import { fetchSearchFilm } from '../services/films-api';
+import Spinner from '../components/Loader/Loader';
 
 
 export default function MoviesPage() {
@@ -68,7 +69,9 @@ export default function MoviesPage() {
         <Section>
             <SearchForm onSubmit={getSearchValue }/>
             {/* <Title title={ 'Trending today'}/> */}
-            {findFilms && <FilmList films={findFilms} />}
+            {!findFilms
+                ? <Spinner/>
+                : <FilmList films={findFilms} />}
 
         </Section>
 

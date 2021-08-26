@@ -5,6 +5,7 @@ import FilmInfo from '../components/FilmInfo/FilmInfo';
 import CastPage from './CastPage';
 import ReviewsPage from './ReviewsPage';
 import Button from '../components/Button/Button';
+import Spinner from '../components/Loader/Loader';
 
 
 export default function MovieDetailsPage() {
@@ -37,8 +38,9 @@ export default function MovieDetailsPage() {
 
     return (
         <>
-            {film &&
-                <>
+            {!film
+                ? <Spinner/>
+                : <>
                 <Button onClickBtn={ onGoBackPage}/>
                 <FilmInfo film={film} />
                 </>

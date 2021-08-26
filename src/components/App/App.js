@@ -1,17 +1,24 @@
+import { lazy, Suspense } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Container from '../Container/Container';
 import Navigation from '../Navigation/Navigation';
+import Spinner from '../Loader/Loader';
 // import FilmList from '../FilmList/FilmList';
 // import SearchForm from '../SearchForm/SearchForm';
-import HomePage from '../../views/HomePage';
-import MoviesPage from '../../views/MoviesPage';
-import MovieDetailsPage from '../../views/MovieDetailsPage';
+// import HomePage from '../../views/HomePage';
+// import MoviesPage from '../../views/MoviesPage';
+// import MovieDetailsPage from '../../views/MovieDetailsPage';
+const HomePage = lazy(() => import('../../views/HomePage' /*webpackChunkName:"homePage"*/));
+const MoviesPage = lazy(() => import('../../views/MoviesPage' /*webpackChunkName:"moviesPage"*/));
+const MovieDetailsPage = lazy(() => import('../../views/MovieDetailsPage' /*webpackChunkName:"MovieDetailsPage"*/));
 
 function App() {
   return (
     <>
       <Container>
         <Navigation />
+        <Suspense fallback={<Spinner/>}>
+
         <Switch>
 
           <Route exact path="/">
@@ -29,6 +36,7 @@ function App() {
             <MovieDetailsPage/>
           </Route>
         </Switch>
+        </Suspense>
       </Container>
     </>
   );

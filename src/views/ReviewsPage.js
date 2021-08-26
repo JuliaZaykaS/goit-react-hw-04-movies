@@ -8,6 +8,7 @@ export default function ReviewsPage({ id }) {
     getFilmReviews(id).then(setReviews);
   }, [id]);
   return (
+    // !reviews && <Spinner />
     reviews
       ? <Reviews reviews={reviews} />
       : <p>We don't have any reviews of this movie</p>
