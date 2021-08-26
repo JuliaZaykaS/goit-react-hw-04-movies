@@ -1,11 +1,12 @@
 import s from './FilmInfo.module.css';
 import { Route, NavLink, useRouteMatch } from 'react-router-dom';
-// import CastPage from '../../views'
+// import Button from '../Button/Button';
 
 export default function FilmInfo({ film }) {
 //   const { url, path } = useRouteMatch();
   return (
     <div>
+      {/* <Button/> */}
       <div>
         <img
           src={`https://image.tmdb.org/t/p/w500/${film.poster_path}`}

@@ -19,6 +19,8 @@ function App() {
           {/* <FilmList /> */}
           </Route>
           <Route path="/movies" exact>
+          {/* <Route path="/movies/:searchMovie" exact> */}
+          {/* <Route path="/movies/:searchMovie"> */}
             {/* <SearchForm /> */}
             <MoviesPage/>
 

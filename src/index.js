@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './components/App/App';
-import {fetchPopularFilms, fetchSearchFilm, getFilmDetails, getFilmCredits, getFilmReviews} from './services/films-api';
+// import {fetchPopularFilms, fetchSearchFilm, getFilmDetails, getFilmCredits, getFilmReviews} from './services/films-api';
 
 
 ReactDOM.render(
@@ -20,4 +20,4 @@ ReactDOM.render(
 // fetchSearchFilm('batman');
 // getFilmDetails('268');
 // getFilmCredits('268');
-getFilmReviews('268');
+// getFilmReviews('268');

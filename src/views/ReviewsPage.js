@@ -7,5 +7,10 @@ export default function ReviewsPage({ id }) {
   useEffect(() => {
     getFilmReviews(id).then(setReviews);
   }, [id]);
-  return <Reviews reviews={reviews} />;
+  return (
+    reviews
+      ? <Reviews reviews={reviews} />
+      : <p>We don't have any reviews of this movie</p>
+
+  )
 }

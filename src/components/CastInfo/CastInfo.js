@@ -8,7 +8,7 @@ export default function CastInfo({ actors }) {
           <li key={actor.id}>
             {actor.profile_path && (
               <img
-                src={`https://image.tmdb.org/t/p/w300/${actor.profile_path}`}
+                src={`https://image.tmdb.org/t/p/w200/${actor.profile_path}`}
                 alt={actor.name}
               ></img>
             )}

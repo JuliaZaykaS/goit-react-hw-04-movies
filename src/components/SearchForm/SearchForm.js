@@ -9,7 +9,11 @@ const SearchForm = ({onSubmit}) => {
     const onSubmitInput = (e) => {
         e.preventDefault();
         onSubmit(search);
-        setSearch('');
+      setSearch('');
+      // console.dir(e.currentTarget);
+      // console.dir(e.currentTarget.children[0]);
+      e.currentTarget.children[0].value='';
+      // e.target.input.value = '';
     }
 
   return (

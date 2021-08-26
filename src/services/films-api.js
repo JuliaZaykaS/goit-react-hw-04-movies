@@ -15,6 +15,8 @@ export async function fetchPopularFilms() {
 }
 
 export async function fetchSearchFilm(query) {
+  if (query === '' || query=== null) return;
+  // if (query=== null) return;
   const response = await axios.get(
     `${BASE_URL}search/movie?api_key=${KEY}&query=${query}&language=en-US&page=1`,
   );
