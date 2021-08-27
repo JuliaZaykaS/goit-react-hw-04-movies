@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { useHistory, useLocation, useParams } from 'react-router-dom';
+// import { useHistory, useLocation, useParams } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import SearchForm from '../components/SearchForm/SearchForm';
 import FilmList from '../components/FilmList/FilmList';
 import Section from '../components/Section/Section';

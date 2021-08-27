@@ -11,7 +11,8 @@ const CastPage = lazy(() => import('./CastPage' /*webpackChunkName:"castPage"*/)
 const ReviewsPage = lazy(() => import('./ReviewsPage' /*webpackChunkName:"ReviewsPage"*/));
 
 export default function MovieDetailsPage() {
-    const { url, path } = useRouteMatch();
+    const { url } = useRouteMatch();
+    // const { url, path } = useRouteMatch();
     const { movieId } = useParams();
     const [film, setFilm] = useState(null);
     const history = useHistory();
