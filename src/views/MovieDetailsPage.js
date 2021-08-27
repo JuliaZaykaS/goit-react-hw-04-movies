@@ -15,6 +15,7 @@ export default function MovieDetailsPage() {
     const { movieId } = useParams();
     const [film, setFilm] = useState(null);
     const history = useHistory();
+    const location = useLocation();
     // const location = useLocation();
 
     // console.log(history);
@@ -25,9 +26,13 @@ export default function MovieDetailsPage() {
     // console.log(url);
     // console.log(movieId);
     const onGoBackPage = () => {
+        // console.log(location.state);
+        // history.push(location?.state?.from ?? '/')
+        history.push(location?.state?.from?.location ?? '/')
+        // history.push(location?.state?.from)
         // console.log(123);
         // console.log(history);
-        history.goBack();
+        // history.goBack();
         // history.push('/')
         // if()
 

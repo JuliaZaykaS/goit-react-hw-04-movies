@@ -1,9 +1,11 @@
 import s from './FilmInfo.module.css';
-import { Route, NavLink, useRouteMatch } from 'react-router-dom';
+import { Route, NavLink, useRouteMatch, useLocation } from 'react-router-dom';
 // import Button from '../Button/Button';
 
 export default function FilmInfo({ film }) {
 //   const { url, path } = useRouteMatch();
+  const location = useLocation();
+  console.log(location);
   return (
     <div>
       {/* <Button/> */}
@@ -36,7 +38,18 @@ export default function FilmInfo({ film }) {
           <li>
             <NavLink
             //   to="/movies/:movieId/cast"
-                      to={`/movies/${film.id}/cast`}
+                      // to={`/movies/${film.id}/cast`}
+              to={{
+                pathname: `/movies/${film.id}/cast`,
+                state: {
+                  from: {
+                    // location: `/movies`
+                    location
+                  }
+                  }
+              }
+
+                      }
               className={s.link}
               activeClassName={s.linkActive}
             >
@@ -47,6 +60,13 @@ export default function FilmInfo({ film }) {
           <li>
             <NavLink
             to={`/movies/${film.id}/reviews`}
+              // to={{
+              //   pathname: `/movies/${film.id}/reviews`,
+              //   state:{from:location}
+
+              // }
+
+              // }
               className={s.link}
               activeClassName={s.linkActive}
             >

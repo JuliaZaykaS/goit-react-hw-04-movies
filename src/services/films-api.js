@@ -53,6 +53,6 @@ export async function getFilmReviews(movieId) {
 
   const data = response.data.results;
 
-  console.log(data);
+  // console.log(data);
   return data;
 }
