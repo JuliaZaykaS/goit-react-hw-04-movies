@@ -18,18 +18,44 @@ export default function MovieDetailsPage() {
     const history = useHistory();
     const location = useLocation();
     // const location = useLocation();
+    // const firstLocation = location.state.from;
+    // console.log(firstLocation);
+    // console.log(location.state.from);
 
     // console.log(history);
-    // console.log(location);
+    console.log(location);
 
 
     // console.log(path);
     // console.log(url);
     // console.log(movieId);
     const onGoBackPage = () => {
-        // console.log(location.state);
+        // console.log(location.state.from);
         // history.push(location?.state?.from ?? '/')
-        history.push(location?.state?.from?.location ?? '/')
+        // history.push(location?.state?.from?.firstLocation ?? location.state.from)
+        // console.log();
+        // if (location.state.from.location) {
+
+        // }
+        // history.push(location?.state?.from?.location ?? '/')
+        // history.push(location?.state?.from?.location ?? location?.state?.from ?? '/')
+        if (!location.state) {
+            history.push('/');
+        };
+        history.push(location?.state?.from?.location ?? location?.state?.from);
+        // if (location?.state?.from?.location) {
+        //     history.push(location.state.from.location)
+        // } else if (!location?.state?.from?.location) {
+        //     history.push(location?.state?.from)
+        // } else {history.push('/')}
+        // history.push(location?.state?.from?.location ?? location?.state?.from ?? '/')
+        // if (location.state.from.location) {
+            // history.push(location.state.from.location)
+        // } else if (location.state.from) {
+            // history.push(location.state.from)
+        // }
+        // } else { history.push('/') };
+        // } else { history.push(firstLocation) };
         // history.push(location?.state?.from)
         // console.log(123);
         // console.log(history);

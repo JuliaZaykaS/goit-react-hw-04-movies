@@ -24,7 +24,7 @@ export default function FilmList({ films }) {
                       url === '/'
                         ? `${url}movies/${id}`
                         : `${url}/${id}`,
-                    state: { from: location },
+                    state: { from: location},
                   }}
 
                   //   to={

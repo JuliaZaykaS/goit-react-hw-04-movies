@@ -9,7 +9,8 @@ export default function FilmInfo({ film }) {
   const { id, poster_path, original_title, popularity, overview, genres } = film;
   //   const { url, path } = useRouteMatch();
   const location = useLocation();
-  console.log(location);
+  // console.log(location);
+  // console.log(location.state.from);
   return (
     <div>
       {/* <Button/> */}
@@ -47,9 +48,14 @@ export default function FilmInfo({ film }) {
                 // pathname: `/movies/${film.id}/cast`,
                 state: {
                   from: {
+                    // firstLocation:location,
                     // location: `/movies`
                     // location: location?.state?.from?.location ?? '/movies',
-                    location: location?.state?.from,
+                    // firstLocation: location.state.from,
+                    location: location?.state?.from ?? '/',
+                    // location: location?.state?.from?.location,
+                    // secondLocation: location?.state?.from?.location,
+                    // location: location?.state?.from,
                   },
                 },
               }}
@@ -71,7 +77,10 @@ export default function FilmInfo({ film }) {
                     // location: `/movies`
                     // location: location?.state?.from?.location ?? '/movies',
                     // location: location?.state?.from?.location,
-                    location: location?.state?.from,
+                    // location: location?.state?.from,
+                    // firstLocation: location.state.from,
+                    location: location?.state?.from ?? '/',
+                    // secondLocation: location?.state?.from?.location,
                   },
                 },
               }}
