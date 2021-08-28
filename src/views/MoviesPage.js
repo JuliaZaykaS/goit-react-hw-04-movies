@@ -8,11 +8,14 @@ import Section from '../components/Section/Section';
 // import FilmInfo from '../components/FilmInfo/FilmInfo';
 import { fetchSearchFilm } from '../services/films-api';
 import Spinner from '../components/Loader/Loader';
+import NotFoundPage from './NotFoundPage';
 
 export default function MoviesPage() {
   const [searchFilms, setSearchFilms] = useState('');
   // const [findFilms, setFindFilms] = useState([]);
   const [findFilms, setFindFilms] = useState(null);
+  const [error, setError] = useState(null);
+
   // const { searchMovie } = useParams();
   const history = useHistory();
   const location = useLocation();
@@ -36,8 +39,8 @@ export default function MoviesPage() {
     // if (searchQuery === '') return;
     // searchFilms !== '' && fetchSearchFilm(searchFilms).then(setFindFilms)
     searchFilms !== ''
-      ? fetchSearchFilm(searchFilms).then(setFindFilms)
-      : fetchSearchFilm(searchQuery).then(setFindFilms);
+      ? fetchSearchFilm(searchFilms).then(setFindFilms).catch(error => setError(error.message))
+      : fetchSearchFilm(searchQuery).then(setFindFilms).catch(error => setError(error.message));
     // && history.push(`/movies/${searchFilms}`)
     // history.push(`/movies/${searchFilms}`)
     // history.push(`/${searchFilms}`)
@@ -66,11 +69,16 @@ export default function MoviesPage() {
     <Section>
       <SearchForm onSubmit={getSearchValue} />
       {/* <Title title={ 'Trending today'}/> */}
-      {!findFilms ? null : findFilms.length === 0 ? (
+      {!findFilms
+        ? null
+        : findFilms.length === 0
+          ? (
         <Spinner />
-      ) : (
+          )
+          : (
         <FilmList films={findFilms} />
       )}
+      <NotFoundPage message={error}/>
       {/* {!findFilms
                 ? <Spinner/>
                 : <FilmList films={findFilms} />} */}

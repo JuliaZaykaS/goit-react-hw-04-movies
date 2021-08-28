@@ -6,6 +6,7 @@ import FilmInfo from '../components/FilmInfo/FilmInfo';
 // import ReviewsPage from './ReviewsPage';
 import Button from '../components/Button/Button';
 import Spinner from '../components/Loader/Loader';
+import NotFoundPage from './NotFoundPage';
 
 const CastPage = lazy(() => import('./CastPage' /*webpackChunkName:"castPage"*/));
 const ReviewsPage = lazy(() => import('./ReviewsPage' /*webpackChunkName:"ReviewsPage"*/));
@@ -15,6 +16,7 @@ export default function MovieDetailsPage() {
     // const { url, path } = useRouteMatch();
     const { movieId } = useParams();
     const [film, setFilm] = useState(null);
+    const [error, setError] = useState(null);
     const history = useHistory();
     const location = useLocation();
     // const location = useLocation();
@@ -67,7 +69,7 @@ export default function MovieDetailsPage() {
     }
 
     useEffect(() => {
-        getFilmDetails(movieId).then(setFilm)
+        getFilmDetails(movieId).then(setFilm).catch(error => setError(error.message));
 
     }, [movieId]);
 
@@ -80,6 +82,7 @@ export default function MovieDetailsPage() {
                 <FilmInfo film={film} />
                 </>
             }
+            <NotFoundPage message={error} />
             <Suspense fallback={<Spinner/>}>
 
             <Route path={`${url}/cast`}>

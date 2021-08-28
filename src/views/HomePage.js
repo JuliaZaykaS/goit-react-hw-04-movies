@@ -4,15 +4,17 @@ import Section from '../components/Section/Section';
 import Title from '../components/Title/Title';
 import { fetchPopularFilms } from '../services/films-api';
 import Spinner from '../components/Loader/Loader';
+import NotFoundPage from './NotFoundPage';
 // import FilmInfo from '../components/FilmInfo/FilmInfo';
 
 export default function HomePage() {
-    const [films, setFilms] = useState([]);
+  const [films, setFilms] = useState([]);
+  const [error, setError] = useState(null);
 
     useEffect(() => {
         // const d = fetchPopularFilms();
         // console.log(d);
-        fetchPopularFilms().then(setFilms);
+        fetchPopularFilms().then(setFilms).catch(error => setError(error.message));
 
         // fetchPopularFilms().then(res => {
 
@@ -29,6 +31,7 @@ export default function HomePage() {
       {!films
         ? <Spinner/>
         : <FilmList films={films} />}
+      <NotFoundPage message={error} />
     </Section>
   );
 }

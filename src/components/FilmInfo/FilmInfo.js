@@ -2,11 +2,13 @@ import s from './FilmInfo.module.css';
 import PropTypes from 'prop-types';
 // import { Route, NavLink, useRouteMatch, useLocation } from 'react-router-dom';
 import { NavLink, useLocation } from 'react-router-dom';
+import NotFound from '../../images/not-found-image.jpg';
 // import { string } from 'yargs';
 // import Button from '../Button/Button';
 
 export default function FilmInfo({ film }) {
-  const { id, poster_path, original_title, popularity, overview, genres } = film;
+  const { id, poster_path, original_title, popularity, overview, genres } =
+    film;
   //   const { url, path } = useRouteMatch();
   const location = useLocation();
   // console.log(location);
@@ -17,7 +19,11 @@ export default function FilmInfo({ film }) {
       {/* <Button/> */}
       <div className={s.mainFilmInfo}>
         <img
-          src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+          src={
+            poster_path
+              ? `https://image.tmdb.org/t/p/w500/${poster_path}`
+              : NotFound
+          }
           alt={original_title}
         ></img>
         <div>
@@ -50,19 +56,19 @@ export default function FilmInfo({ film }) {
                 state: {
                   // from: {
                   from: location?.state?.from ?? '/',
-                    // firstLocation:location,
-                    // location: `/movies`
-                    // location: location?.state?.from?.location ?? '/movies',
-                    // firstLocation: location.state.from,
+                  // firstLocation:location,
+                  // location: `/movies`
+                  // location: location?.state?.from?.location ?? '/movies',
+                  // firstLocation: location.state.from,
 
-                    // location: location?.state?.from ?? '/',
-                    // location: location?.state?.from ?? '/',
-                    // location: location?.state ?? '/',
-                    // location: { ...location?.state?.from } ?? '/',
-                    // location: location?.state?.from?.location,
-                    // secondLocation: location?.state?.from?.location,
-                    // location: location?.state?.from,
-                  },
+                  // location: location?.state?.from ?? '/',
+                  // location: location?.state?.from ?? '/',
+                  // location: location?.state ?? '/',
+                  // location: { ...location?.state?.from } ?? '/',
+                  // location: location?.state?.from?.location,
+                  // secondLocation: location?.state?.from?.location,
+                  // location: location?.state?.from,
+                },
                 // },
               }}
               className={s.link}
@@ -81,14 +87,14 @@ export default function FilmInfo({ film }) {
                 state: {
                   from: location?.state?.from ?? '/',
                   // from: {
-                    // location: `/movies`
-                    // location: location?.state?.from?.location ?? '/movies',
-                    // location: location?.state?.from?.location,
-                    // location: location?.state?.from,
-                    // firstLocation: location.state.from,
-                    // location: location?.state?.from ?? '/',
-                    // location: { ...location?.state?.from } ?? '/',
-                    // secondLocation: location?.state?.from?.location,
+                  // location: `/movies`
+                  // location: location?.state?.from?.location ?? '/movies',
+                  // location: location?.state?.from?.location,
+                  // location: location?.state?.from,
+                  // firstLocation: location.state.from,
+                  // location: location?.state?.from ?? '/',
+                  // location: { ...location?.state?.from } ?? '/',
+                  // secondLocation: location?.state?.from?.location,
                   // },
                 },
               }}
@@ -226,9 +232,9 @@ export default function FilmInfo({ film }) {
 
 FilmInfo.propTypes = {
   id: PropTypes.number,
-  poster_path:PropTypes.string,
-  original_title:PropTypes.string,
-  popularity:PropTypes.number,
-  overview:PropTypes.string,
-  genres:PropTypes.arrayOf(PropTypes.string),
-}
+  poster_path: PropTypes.string,
+  original_title: PropTypes.string,
+  popularity: PropTypes.number,
+  overview: PropTypes.string,
+  genres: PropTypes.arrayOf(PropTypes.string),
+};

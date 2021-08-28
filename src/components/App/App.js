@@ -12,6 +12,7 @@ import Spinner from '../Loader/Loader';
 const HomePage = lazy(() => import('../../views/HomePage' /*webpackChunkName:"homePage"*/));
 const MoviesPage = lazy(() => import('../../views/MoviesPage' /*webpackChunkName:"moviesPage"*/));
 const MovieDetailsPage = lazy(() => import('../../views/MovieDetailsPage' /*webpackChunkName:"MovieDetailsPage"*/));
+const NotFoundPage = lazy(() => import('../../views/NotFoundPage.js' /*webpackChunkName:"NotFoundPage"*/));
 
 function App() {
   return (
@@ -36,7 +37,10 @@ function App() {
           </Route>
           <Route path="/movies/:movieId">
             <MovieDetailsPage/>
-          </Route>
+            </Route>
+            <Route>
+              <NotFoundPage massage='Page not found'/>
+            </Route>
         </Switch>
         </Suspense>
       </Container>
