@@ -1,8 +1,6 @@
 import s from './CastInfo.module.css';
 import PropTypes from 'prop-types';
 import NotFound from '../../images/not-found-image.jpg';
-console.log(NotFound);
-
 export default function CastInfo({ actors }) {
   return (
     <ul className={s.castList}>
@@ -26,25 +24,6 @@ export default function CastInfo({ actors }) {
     </ul>
   );
 }
-// export default function CastInfo({ actors }) {
-//   return (
-//     <ul className={s.castList}>
-//       {actors &&
-//         actors.map(actor => (
-//           <li key={actor.id}>
-//             {actor.profile_path && (
-//               <img
-//                 src={`https://image.tmdb.org/t/p/w200/${actor.profile_path}`}
-//                 alt={actor.name}
-//               ></img>
-//             )}
-//             <p className={s.actor}>{actor.name}</p>
-//             <p ><span className={s.character}>Character:</span> {actor.character}</p>
-//           </li>
-//         ))}
-//     </ul>
-//   );
-// }
 
 CastInfo.propTypes = {
   id: PropTypes.number,

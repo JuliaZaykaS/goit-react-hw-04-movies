@@ -4,26 +4,24 @@ const KEY = '222d2b89e8701088edcf9049fa569980';
 const BASE_URL = 'https://api.themoviedb.org/3/';
 
 export async function fetchPopularFilms() {
-
   const response = await axios.get(
     `${BASE_URL}trending/all/day?api_key=${KEY}`,
   );
 
   const data = response.data.results;
-    // console.log(data);
-    return data;
+
+  return data;
 }
 
 export async function fetchSearchFilm(query) {
-  if (query === '' || query=== null) return;
-  // if (query=== null) return;
+  if (query === '' || query === null) return;
+
   const response = await axios.get(
     `${BASE_URL}search/movie?api_key=${KEY}&query=${query}&language=en-US&page=1`,
   );
 
   const data = response.data.results;
 
-//   console.log(data);
   return data;
 }
 export async function getFilmDetails(movieId) {
@@ -33,7 +31,6 @@ export async function getFilmDetails(movieId) {
 
   const data = response.data;
 
-  // console.log(data);
   return data;
 }
 export async function getFilmCredits(movieId) {
@@ -43,7 +40,6 @@ export async function getFilmCredits(movieId) {
 
   const data = response.data.cast;
 
-  // console.log(data);
   return data;
 }
 export async function getFilmReviews(movieId) {
@@ -53,6 +49,5 @@ export async function getFilmReviews(movieId) {
 
   const data = response.data.results;
 
-  // console.log(data);
   return data;
 }
