@@ -42,7 +42,8 @@ export default function MovieDetailsPage() {
         if (!location.state) {
             history.push('/');
         };
-        history.push(location?.state?.from?.location ?? location?.state?.from);
+        // history.push(location?.state?.from?.location ?? location?.state?.from);
+        history.push(location?.state?.from);
         // if (location?.state?.from?.location) {
         //     history.push(location.state.from.location)
         // } else if (!location?.state?.from?.location) {

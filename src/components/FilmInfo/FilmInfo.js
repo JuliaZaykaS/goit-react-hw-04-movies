@@ -10,6 +10,7 @@ export default function FilmInfo({ film }) {
   //   const { url, path } = useRouteMatch();
   const location = useLocation();
   // console.log(location);
+  // console.log(location.state);
   // console.log(location.state.from);
   return (
     <div>
@@ -47,17 +48,22 @@ export default function FilmInfo({ film }) {
                 pathname: `/movies/${id}/cast`,
                 // pathname: `/movies/${film.id}/cast`,
                 state: {
-                  from: {
+                  // from: {
+                  from: location?.state?.from ?? '/',
                     // firstLocation:location,
                     // location: `/movies`
                     // location: location?.state?.from?.location ?? '/movies',
                     // firstLocation: location.state.from,
-                    location: location?.state?.from ?? '/',
+
+                    // location: location?.state?.from ?? '/',
+                    // location: location?.state?.from ?? '/',
+                    // location: location?.state ?? '/',
+                    // location: { ...location?.state?.from } ?? '/',
                     // location: location?.state?.from?.location,
                     // secondLocation: location?.state?.from?.location,
                     // location: location?.state?.from,
                   },
-                },
+                // },
               }}
               className={s.link}
               activeClassName={s.linkActive}
@@ -73,15 +79,17 @@ export default function FilmInfo({ film }) {
                 pathname: `/movies/${id}/reviews`,
                 // pathname: `/movies/${film.id}/reviews`,
                 state: {
-                  from: {
+                  from: location?.state?.from ?? '/',
+                  // from: {
                     // location: `/movies`
                     // location: location?.state?.from?.location ?? '/movies',
                     // location: location?.state?.from?.location,
                     // location: location?.state?.from,
                     // firstLocation: location.state.from,
-                    location: location?.state?.from ?? '/',
+                    // location: location?.state?.from ?? '/',
+                    // location: { ...location?.state?.from } ?? '/',
                     // secondLocation: location?.state?.from?.location,
-                  },
+                  // },
                 },
               }}
               // to={{

@@ -5,7 +5,7 @@ import { Link, useRouteMatch, useLocation } from 'react-router-dom';
 export default function FilmList({ films }) {
   const { url } = useRouteMatch();
   const location = useLocation();
-  console.log(location);
+  // console.log(location);
   // const params = useRouteMatch();
   // console.log(params);
   return (
